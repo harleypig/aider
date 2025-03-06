@@ -19,7 +19,6 @@ beautifulsoup4
 PyYAML
 diff-match-patch
 pypandoc
-litellm
 flake8
 importlib_resources
 pyperclip
@@ -31,6 +30,10 @@ psutil
 watchfiles
 socksio
 pip
+
+# CVE-2024-10188
+# CVE-2024-8984
+litellm==1.52.8
 
 # The proper dependency is networkx[default], but this brings
 # in matplotlib and a bunch of other deps
@@ -46,7 +49,7 @@ networkx<3.3
 scipy<1.14
 
 # v0.22.2 seems to break tree-sitter-languages?
-tree-sitter==0.21.3 
+tree-sitter==0.21.3
 
 # GitHub Release action failing on "KeyError: 'home-page'"
 # https://github.com/pypa/twine/blob/6fbf880ee60915cf1666348c4bdd78a10415f2ac/twine/__init__.py#L40

@@ -72,9 +72,7 @@ h11==0.14.0
 httpcore==1.0.7
     # via httpx
 httpx==0.28.1
-    # via
-    #   litellm
-    #   openai
+    # via openai
 huggingface-hub==0.29.1
     # via tokenizers
 idna==3.10
@@ -101,7 +99,7 @@ jsonschema==4.23.0
     #   litellm
 jsonschema-specifications==2024.10.1
     # via jsonschema
-litellm==1.62.1
+litellm==1.52.8
     # via -r requirements/requirements.in
 markdown-it-py==3.0.0
     # via rich
@@ -189,6 +187,7 @@ regex==2024.11.6
 requests==2.32.3
     # via
     #   huggingface-hub
+    #   litellm
     #   mixpanel
     #   posthog
     #   tiktoken
