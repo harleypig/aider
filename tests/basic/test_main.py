@@ -444,6 +444,11 @@ class TestMain(TestCase):
                 self.assertEqual(kwargs["main_model"].name, "gpt-4-1106-preview")
                 self.assertEqual(kwargs["map_tokens"], 8192)
 
+                # Reset environment variables that might have been set by previous test
+                for var in list(os.environ.keys()):
+                    if var.startswith("AIDER_"):
+                        del os.environ[var]
+
                 # Test loading from current working directory
                 main(["--yes", "--exit"], input=DummyInput(), output=DummyOutput())
                 _, kwargs = MockCoder.call_args
@@ -454,6 +459,12 @@ class TestMain(TestCase):
 
                 # Test loading from git root
                 cwd_config.unlink()
+                
+                # Reset environment variables that might have been set by previous test
+                for var in list(os.environ.keys()):
+                    if var.startswith("AIDER_"):
+                        del os.environ[var]
+                        
                 main(["--yes", "--exit"], input=DummyInput(), output=DummyOutput())
                 _, kwargs = MockCoder.call_args
                 self.assertEqual(kwargs["main_model"].name, "gpt-4")
@@ -461,6 +472,12 @@ class TestMain(TestCase):
 
                 # Test loading from home directory
                 git_config.unlink()
+                
+                # Reset environment variables that might have been set by previous test
+                for var in list(os.environ.keys()):
+                    if var.startswith("AIDER_"):
+                        del os.environ[var]
+                        
                 main(["--yes", "--exit"], input=DummyInput(), output=DummyOutput())
                 _, kwargs = MockCoder.call_args
                 self.assertEqual(kwargs["main_model"].name, "gpt-3.5-turbo")

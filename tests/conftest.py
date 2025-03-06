@@ -54,7 +54,9 @@ def clean_environment():
         "AIDER_OPENAI_API_KEY",
         "AIDER_ANTHROPIC_API_KEY",
         "AIDER_MODEL",
-        "AIDER_EDIT_FORMAT"
+        "AIDER_EDIT_FORMAT",
+        "AIDER_MAP_TOKENS",
+        "AIDER_CONFIG"
     ])
     
     # Store original environment variables
